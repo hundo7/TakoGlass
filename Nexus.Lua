@@ -2843,7 +2843,7 @@ function TakoGlass.Elements.CreateButton(section, options)
         Parent = button.Frame
     })
     
-    Create("UICorner", {CornerRadius = UDim.new(0, ELEMENT_RADIUS), Parent: button.Button})
+    Create("UICorner", {CornerRadius = UDim.new(0, ELEMENT_RADIUS), Parent = button.Button})
     
     -- Icon
     if button.Icon ~= "" then
@@ -2856,7 +2856,7 @@ function TakoGlass.Elements.CreateButton(section, options)
             Size = UDim2.new(0, 20, 0, 20),
             Position = UDim2.new(0, 10, 0.5, -10),
             ZIndex = 108,
-            Parent: button.Button
+            Parent = button.Button
         })
         
         button.Button.Text = "   " .. button.Name
@@ -3009,16 +3009,16 @@ function TakoGlass.Elements.CreateInput(section, options)
         Size = UDim2.new(1, 0, 0, input.Multiline and 50 or 18),
         Position = UDim2.new(0, 0, 1, -18),
         ZIndex = 108,
-        Parent: input.Frame
+        Parent = input.Frame
     })
     
-    Create("UICorner", {CornerRadius = UDim.new(0, ELEMENT_RADIUS), Parent: input.InputField})
+    Create("UICorner", {CornerRadius = UDim.new(0, ELEMENT_RADIUS), Parent = input.InputField})
     Create("UIPadding", {
         PaddingLeft = UDim.new(0, 8),
         PaddingRight = UDim.new(0, 8),
         PaddingTop = UDim.new(0, 4),
         PaddingBottom = UDim.new(0, 4),
-        Parent: input.InputField
+        Parent = input.InputField
     })
     
     -- Multiline setup
@@ -3157,7 +3157,7 @@ function TakoGlass.Elements.CreateDropdown(section, options)
         Size = UDim2.new(1, 0, 0, 20),
         Position = UDim2.new(0, 0, 0, 0),
         ZIndex = 107,
-        Parent: dropdown.Frame
+        Parent = dropdown.Frame
     })
     
     -- Dropdown button
@@ -3172,14 +3172,14 @@ function TakoGlass.Elements.CreateDropdown(section, options)
         Size = UDim2.new(1, 0, 0, 36),
         Position = UDim2.new(0, 0, 1, -36),
         ZIndex = 108,
-        Parent: dropdown.Frame
+        Parent = dropdown.Frame
     })
     
-    Create("UICorner", {CornerRadius = UDim.new(0, ELEMENT_RADIUS), Parent: dropdown.Button})
+    Create("UICorner", {CornerRadius = UDim.new(0, ELEMENT_RADIUS), Parent = dropdown.Button})
     Create("UIPadding", {
         PaddingLeft = UDim.new(0, 10),
         PaddingRight = UDim.new(0, 30),
-        Parent: dropdown.Button
+        Parent = dropdown.Button
     })
     
     -- Dropdown arrow
@@ -3192,7 +3192,7 @@ function TakoGlass.Elements.CreateDropdown(section, options)
         Size = UDim2.new(0, 20, 0, 20),
         Position = UDim2.new(1, -25, 0.5, -10),
         ZIndex = 109,
-        Parent: dropdown.Button
+        Parent = dropdown.Button
     })
     
     -- Dropdown list
@@ -3207,21 +3207,21 @@ function TakoGlass.Elements.CreateDropdown(section, options)
         BorderSizePixel = 0,
         ZIndex = 150,
         Visible = false,
-        Parent: dropdown.Button
+        Parent = dropdown.Button
     })
     
-    Create("UICorner", {CornerRadius = UDim.new(0, ELEMENT_RADIUS), Parent: dropdown.List})
+    Create("UICorner", {CornerRadius = UDim.new(0, ELEMENT_RADIUS), Parent = dropdown.List})
     Create("UIStroke", {
         Color = theme.Stroke,
         Thickness = 1,
         Transparency = 0.3,
-        Parent: dropdown.List
+        Parent = dropdown.List
     })
     
     dropdown.ListLayout = Create("UIListLayout", {
         FillDirection = Enum.FillDirection.Vertical,
         Padding = UDim.new(0, 2),
-        Parent: dropdown.List
+        Parent = dropdown.List
     })
     
     Create("UIPadding", {
@@ -3229,7 +3229,7 @@ function TakoGlass.Elements.CreateDropdown(section, options)
         PaddingBottom = UDim.new(0, 4),
         PaddingLeft = UDim.new(0, 4),
         PaddingRight = UDim.new(0, 4),
-        Parent: dropdown.List
+        Parent = dropdown.List
     })
     
     -- Search bar (if searchable)
@@ -3246,14 +3246,14 @@ function TakoGlass.Elements.CreateDropdown(section, options)
             Position = UDim2.new(0, 0, 0, 0),
             ZIndex = 151,
             Visible = false,
-            Parent: dropdown.List
+            Parent = dropdown.List
         })
         
-        Create("UICorner", {CornerRadius = UDim.new(0, ELEMENT_RADIUS - 2), Parent: dropdown.SearchBox})
+        Create("UICorner", {CornerRadius = UDim.new(0, ELEMENT_RADIUS - 2), Parent = dropdown.SearchBox})
         Create("UIPadding", {
             PaddingLeft = UDim.new(0, 8),
             PaddingRight = UDim.new(0, 8),
-            Parent: dropdown.SearchBox
+            Parent = dropdown.SearchBox
         })
         
         dropdown.SearchBox:GetPropertyChangedSignal("Text"):Connect(function()
@@ -3294,7 +3294,7 @@ function TakoGlass.Elements.CreateDropdown(section, options)
                 Size = UDim2.new(1, 0, 0, 28),
                 Position = UDim2.new(0, 0, 0, startY + (i-1) * 28),
                 ZIndex = 152,
-                Parent: dropdown.List
+                Parent = dropdown.List
             })
             
             optionButton.MouseButton1Click:Connect(function()
@@ -3487,7 +3487,7 @@ function TakoGlass.Elements.CreateColorPicker(section, options)
         Size = UDim2.new(1, -50, 0, 20),
         Position = UDim2.new(0, 0, 0, 0),
         ZIndex = 107,
-        Parent: colorpicker.Frame
+        Parent = colorpicker.Frame
     })
     
     -- Color preview
@@ -3498,15 +3498,15 @@ function TakoGlass.Elements.CreateColorPicker(section, options)
         Size = UDim2.new(0, 40, 0, 22),
         Position = UDim2.new(1, -40, 0, 7),
         ZIndex = 108,
-        Parent: colorpicker.Frame
+        Parent = colorpicker.Frame
     })
     
-    Create("UICorner", {CornerRadius = UDim.new(0, ELEMENT_RADIUS - 2), Parent: colorpicker.Preview})
+    Create("UICorner", {CornerRadius = UDim.new(0, ELEMENT_RADIUS - 2), Parent = colorpicker.Preview})
     Create("UIStroke", {
         Color = theme.Stroke,
         Thickness = 1,
         Transparency = 0.4,
-        Parent: colorpicker.Preview
+        Parent = colorpicker.Preview
     })
     
     -- Color picker popup
@@ -3518,15 +3518,15 @@ function TakoGlass.Elements.CreateColorPicker(section, options)
         BorderSizePixel = 0,
         ZIndex = 200,
         Visible = false,
-        Parent: colorpicker.Frame
+        Parent = colorpicker.Frame
     })
     
-    Create("UICorner", {CornerRadius = UDim.new(0, ELEMENT_RADIUS), Parent: colorpicker.Popup})
+    Create("UICorner", {CornerRadius = UDim.new(0, ELEMENT_RADIUS), Parent = colorpicker.Popup})
     Create("UIStroke", {
         Color = theme.Stroke,
         Thickness = 1,
         Transparency = 0.3,
-        Parent: colorpicker.Popup
+        Parent = colorpicker.Popup
     })
     
     Create("UIPadding", {
@@ -3534,7 +3534,7 @@ function TakoGlass.Elements.CreateColorPicker(section, options)
         PaddingBottom = UDim.new(0, 12),
         PaddingLeft = UDim.new(0, 12),
         PaddingRight = UDim.new(0, 12),
-        Parent: colorpicker.Popup
+        Parent = colorpicker.Popup
     })
     
     -- HSV color picker components
@@ -3544,9 +3544,9 @@ function TakoGlass.Elements.CreateColorPicker(section, options)
         Position = UDim2.new(0, 0, 0, 0),
         BorderSizePixel = 0,
         ZIndex = 201,
-        Parent: colorpicker.Popup
+        Parent = colorpicker.Popup
     })
-    Create("UICorner", {CornerRadius = UDim.new(0, ELEMENT_RADIUS - 4), Parent: colorpicker.HueSaturation})
+    Create("UICorner", {CornerRadius = UDim.new(0, ELEMENT_RADIUS - 4), Parent = colorpicker.HueSaturation})
     
     -- Value slider
     colorpicker.ValueSlider = Create("Frame", {
@@ -3555,9 +3555,9 @@ function TakoGlass.Elements.CreateColorPicker(section, options)
         Position = UDim2.new(1, -20, 0, 0),
         BorderSizePixel = 0,
         ZIndex = 202,
-        Parent: colorpicker.Popup
+        Parent = colorpicker.Popup
     })
-    Create("UICorner", {CornerRadius = UDim.new(0, ELEMENT_RADIUS - 4), Parent: colorpicker.ValueSlider})
+    Create("UICorner", {CornerRadius = UDim.new(0, ELEMENT_RADIUS - 4), Parent = colorpicker.ValueSlider})
     
     -- Alpha slider (if enabled)
     if colorpicker.Alpha then
@@ -3568,9 +3568,9 @@ function TakoGlass.Elements.CreateColorPicker(section, options)
             Position = UDim2.new(0, 0, 0, 160),
             BorderSizePixel = 0,
             ZIndex = 201,
-            Parent: colorpicker.Popup
+            Parent = colorpicker.Popup
         })
-        Create("UICorner", {CornerRadius = UDim.new(0, ELEMENT_RADIUS - 4), Parent: colorpicker.AlphaSlider})
+        Create("UICorner", {CornerRadius = UDim.new(0, ELEMENT_RADIUS - 4), Parent = colorpicker.AlphaSlider})
         
         -- Alpha gradient
         local alphaGradient = Create("UIGradient", {
@@ -3582,7 +3582,7 @@ function TakoGlass.Elements.CreateColorPicker(section, options)
                 NumberSequenceKeypoint.new(0, 0),
                 NumberSequenceKeypoint.new(1, 1)
             }),
-            Parent: colorpicker.AlphaSlider
+            Parent = colorpicker.AlphaSlider
         })
     end
     
@@ -3779,7 +3779,7 @@ function TakoGlass.Elements.CreateKeybind(section, options)
         Size = UDim2.new(1, -80, 0, 20),
         Position = UDim2.new(0, 0, 0, 0),
         ZIndex = 107,
-        Parent: keybind.Frame
+        Parent = keybind.Frame
     })
     
     -- Keybind button
@@ -3793,10 +3793,10 @@ function TakoGlass.Elements.CreateKeybind(section, options)
         Size = UDim2.new(0, 70, 0, 24),
         Position = UDim2.new(1, -70, 0, 6),
         ZIndex = 108,
-        Parent: keybind.Frame
+        Parent = keybind.Frame
     })
     
-    Create("UICorner", {CornerRadius = UDim.new(0, ELEMENT_RADIUS - 2), Parent: keybind.Button})
+    Create("UICorner", {CornerRadius = UDim.new(0, ELEMENT_RADIUS - 2), Parent = keybind.Button})
     
     -- Functionality
     local isListening = false
@@ -3945,7 +3945,7 @@ function TakoGlass.Elements.CreateParagraph(section, options)
             Size = UDim2.new(1, 0, 0, 22),
             Position = UDim2.new(0, 0, 0, 0),
             ZIndex = 107,
-            Parent: paragraph.Frame
+            Parent = paragraph.Frame
         })
     end
     
@@ -3961,7 +3961,7 @@ function TakoGlass.Elements.CreateParagraph(section, options)
         Size = UDim2.new(1, 0, 0, 0),
         Position = UDim2.new(0, 0, 0, paragraph.Title ~= "" and 24 or 0),
         ZIndex = 107,
-        Parent: paragraph.Frame
+        Parent = paragraph.Frame
     })
     
     -- Calculate height based on content
@@ -3983,7 +3983,7 @@ function TakoGlass.Elements.CreateParagraph(section, options)
             Size = UDim2.new(0, 24, 0, 24),
             Position = UDim2.new(1, -24, 0, 0),
             ZIndex = 108,
-            Parent: paragraph.Frame
+            Parent = paragraph.Frame
         })
         
         paragraph.CopyButton.MouseButton1Click:Connect(function()
@@ -4075,20 +4075,20 @@ function TakoGlass.Elements.CreateImage(section, options)
         Position = UDim2.new(0, 0, 0, 0),
         ScaleType = Enum.ScaleType.Fit,
         ZIndex = 107,
-        Parent: image.Frame
+        Parent = image.Frame
     })
     
     -- Aspect ratio constraint
     if image.AspectRatio then
         Create("UIAspectRatioConstraint", {
             AspectRatio = image.AspectRatio,
-            Parent: image.ImageLabel
+            Parent = image.ImageLabel
         })
     end
     
     -- Rounded corners
     if image.Rounded then
-        Create("UICorner", {CornerRadius = UDim.new(0, ELEMENT_RADIUS), Parent: image.ImageLabel})
+        Create("UICorner", {CornerRadius = UDim.new(0, ELEMENT_RADIUS), Parent = image.ImageLabel})
     end
     
     -- Click functionality
@@ -4118,7 +4118,7 @@ function TakoGlass.Elements.CreateImage(section, options)
             BackgroundTransparency = 1,
             Size = UDim2.new(1, 0, 1, 0),
             ZIndex = 108,
-            Parent: image.Frame
+            Parent = image.Frame
         })
         
         local spinner = Create("TextLabel", {
@@ -4130,7 +4130,7 @@ function TakoGlass.Elements.CreateImage(section, options)
             Size = UDim2.new(0, 30, 0, 30),
             Position = UDim2.new(0.5, -15, 0.5, -15),
             ZIndex = 109,
-            Parent: image.LoadingIndicator
+            Parent = image.LoadingIndicator
         })
         
         -- Spinning animation
@@ -4170,7 +4170,7 @@ function TakoGlass.Elements.CreateImage(section, options)
                 TextColor3 = theme.Error,
                 Size = UDim2.new(1, 0, 1, 0),
                 ZIndex = 108,
-                Parent: image.Frame
+                Parent = image.Frame
             })
         end
     end
@@ -4198,7 +4198,7 @@ function TakoGlass.Elements.CreateImage(section, options)
                 BackgroundTransparency = 1,
                 Size = UDim2.new(1, 0, 1, 0),
                 ZIndex = 108,
-                Parent: image.Frame
+                Parent = image.Frame
             })
             
             local spinner = Create("TextLabel", {
@@ -4210,7 +4210,7 @@ function TakoGlass.Elements.CreateImage(section, options)
                 Size = UDim2.new(0, 30, 0, 30),
                 Position = UDim2.new(0.5, -15, 0.5, -15),
                 ZIndex = 109,
-                Parent: image.LoadingIndicator
+                Parent = image.LoadingIndicator
             })
             
             local rotation = 0
@@ -4298,7 +4298,7 @@ function TakoGlass.Elements.CreateCodeBlock(section, options)
         Parent = section.Content 
     })
     
-    Create("UICorner", {CornerRadius = UDim.new(0, ELEMENT_RADIUS), Parent: codeblock.Frame})
+    Create("UICorner", {CornerRadius = UDim.new(0, ELEMENT_RADIUS), Parent = codeblock.Frame})
     
     -- Header
     codeblock.Header = Create("Frame", {
@@ -4308,10 +4308,10 @@ function TakoGlass.Elements.CreateCodeBlock(section, options)
         Position = UDim2.new(0, 0, 0, 0),
         BorderSizePixel = 0,
         ZIndex = 107,
-        Parent: codeblock.Frame
+        Parent = codeblock.Frame
     })
     
-    Create("UICorner", {CornerRadius = UDim.new(0, ELEMENT_RADIUS), Parent: codeblock.Header})
+    Create("UICorner", {CornerRadius = UDim.new(0, ELEMENT_RADIUS), Parent = codeblock.Header})
     
     -- Language label
     codeblock.LanguageLabel = Create("TextLabel", {
@@ -4324,7 +4324,7 @@ function TakoGlass.Elements.CreateCodeBlock(section, options)
         Size = UDim2.new(1, -60, 0, 20),
         Position = UDim2.new(0, 10, 0, 6),
         ZIndex = 108,
-        Parent: codeblock.Header
+        Parent = codeblock.Header
     })
     
     -- Copy button
@@ -4338,7 +4338,7 @@ function TakoGlass.Elements.CreateCodeBlock(section, options)
             Size = UDim2.new(0, 24, 0, 24),
             Position = UDim2.new(1, -28, 0, 4),
             ZIndex = 108,
-            Parent: codeblock.Header
+            Parent = codeblock.Header
         })
         
         codeblock.CopyButton.MouseButton1Click:Connect(function()
@@ -4367,7 +4367,7 @@ function TakoGlass.Elements.CreateCodeBlock(section, options)
         ScrollBarImageColor3 = theme.Accent,
         BorderSizePixel = 0,
         ZIndex = 107,
-        Parent: codeblock.Frame
+        Parent = codeblock.Frame
     })
     
     Create("UIPadding", {
@@ -4375,7 +4375,7 @@ function TakoGlass.Elements.CreateCodeBlock(section, options)
         PaddingBottom = UDim.new(0, 8),
         PaddingLeft = UDim.new(0, 10),
         PaddingRight = UDim.new(0, 10),
-        Parent: codeblock.CodeFrame
+        Parent = codeblock.CodeFrame
     })
     
     -- Code text label
@@ -4390,7 +4390,7 @@ function TakoGlass.Elements.CreateCodeBlock(section, options)
         TextWrapped = true,
         AutomaticSize = Enum.AutomaticSize.XY,
         ZIndex = 108,
-        Parent: codeblock.CodeFrame
+        Parent = codeblock.CodeFrame
     })
     
     -- Simple syntax highlighting
