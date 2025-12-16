@@ -11,22 +11,11 @@ local TextService = game:GetService("TextService")
 local GuiService = game:GetService("GuiService")
 local CoreGui = game:GetService("CoreGui")
 
--- Check if running on client
 if not RunService:IsClient() then
     error("TakoGlass must run on the client")
-    return
 end
 
--- Wait for LocalPlayer to exist (FIX FOR YOUR ERROR)
-local LocalPlayer = Players.LocalPlayer
-if not LocalPlayer then
-    LocalPlayer = Players:WaitForChild("LocalPlayer", 10)
-    if not LocalPlayer then
-        error("Failed to get LocalPlayer - make sure this runs on the client!")
-        return
-    end
-end
-
+local LocalPlayer = Players.LocalPlayer or Players.PlayerAdded:Wait()
 local TakoGlass = {Version = "10.0.0", Windows = {}, Services = {}, Elements = {}}
 TakoGlass.__index = TakoGlass
 
@@ -45,8 +34,6 @@ local MONO_FONT = Enum.Font.Code
 
 -- Performance constants
 local FRAME_BUDGET = 0.008 -- 8ms per frame
-local BATCH_SIZE = 50
-local CACHE_TIMEOUT = 300 -- 5 minutes
 
 --------------------------------------------------------------------
 -- 3. THEME ENGINE - SUPERIOR TO WINDUI
