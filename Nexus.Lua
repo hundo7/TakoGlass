@@ -31,6 +31,12 @@ local ELEMENT_RADIUS = 10
 local ICON_FONT = Enum.Font.Gotham
 local UI_FONT = Enum.Font.Gotham
 local MONO_FONT = Enum.Font.Code
+
+-- Performance constants
+local FRAME_BUDGET = 0.008 -- 8ms per frame
+local BATCH_SIZE = 50
+local CACHE_TIMEOUT = 300 -- 5 minutes
+
 --------------------------------------------------------------------
 -- 3. THEME ENGINE - SUPERIOR TO WINDUI
 --------------------------------------------------------------------
