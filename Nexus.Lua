@@ -3143,7 +3143,7 @@ function TakoGlass.Elements.CreateDropdown(section, options)
         Size = UDim2.new(1, 0, 0, 36),
         BackgroundTransparency = 1,
         ZIndex = 106,
-        Parent: section.Content
+        Parent = section.Content
     })
     
     -- Label
