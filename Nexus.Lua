@@ -368,7 +368,11 @@ local function CalculateTextSize(text, font, size, bounds)
     local success, result = pcall(function()
         return TextService:GetTextSize(text, size, font, bounds)
     end)
-    return success and result or Vector2.new(0, 0)
+    if success then
+        return result
+    else
+        return Vector2.new(100, 20) -- fallback size
+    end
 end
 
 local function GenerateGradient(colors, rotation)
