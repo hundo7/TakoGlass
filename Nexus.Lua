@@ -11,11 +11,22 @@ local TextService = game:GetService("TextService")
 local GuiService = game:GetService("GuiService")
 local CoreGui = game:GetService("CoreGui")
 
+-- Check if running on client
 if not RunService:IsClient() then
     error("TakoGlass must run on the client")
+    return
 end
 
-local LocalPlayer = Players.LocalPlayer or Players.PlayerAdded:Wait()
+-- Wait for LocalPlayer to exist (FIX FOR YOUR ERROR)
+local LocalPlayer = Players.LocalPlayer
+if not LocalPlayer then
+    LocalPlayer = Players:WaitForChild("LocalPlayer", 10)
+    if not LocalPlayer then
+        error("Failed to get LocalPlayer - make sure this runs on the client!")
+        return
+    end
+end
+
 local TakoGlass = {Version = "10.0.0", Windows = {}, Services = {}, Elements = {}}
 TakoGlass.__index = TakoGlass
 
