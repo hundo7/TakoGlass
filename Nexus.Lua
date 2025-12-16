@@ -1273,8 +1273,14 @@ function TakoGlass:CreateWindow(options)
         window.Theme = window.Config.__Theme
     end
     
-    TakoGlass.CurrentTheme = TakoGlass.Themes[window.Theme]
-    
+window.Theme = window.Theme or DEFAULT_THEME
+local theme = TakoGlass.Themes[window.Theme]
+if not theme then
+    warn("TakoGlass: unknown theme '" .. tostring(window.Theme) .. "', falling back to Dark")
+    theme = TakoGlass.Themes.Dark
+end
+TakoGlass.CurrentTheme = theme
+
     -- Create GUI
     local pg = GetPlayerGui()
     window.Gui = Create("ScreenGui", {
