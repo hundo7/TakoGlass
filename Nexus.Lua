@@ -365,7 +365,10 @@ end
 
 local function CalculateTextSize(text, font, size, bounds)
     bounds = bounds or Vector2.new(1000, 1000)
-    return TextService:GetTextSize(text, size, font, bounds)
+    local success, result = pcall(function()
+        return TextService:GetTextSize(text, size, font, bounds)
+    end)
+    return success and result or Vector2.new(0, 0)
 end
 
 local function GenerateGradient(colors, rotation)
