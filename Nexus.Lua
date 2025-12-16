@@ -3473,7 +3473,7 @@ function TakoGlass.Elements.CreateColorPicker(section, options)
         Size = UDim2.new(1, 0, 0, 36),
         BackgroundTransparency = 1,
         ZIndex = 106,
-        Parent: section.Content
+        Parent = section.Content 
     })
     
     -- Label
@@ -3765,7 +3765,7 @@ function TakoGlass.Elements.CreateKeybind(section, options)
         Size = UDim2.new(1, 0, 0, 36),
         BackgroundTransparency = 1,
         ZIndex = 106,
-        Parent: section.Content
+        Parent = section.Content 
     })
     
     -- Label
@@ -3930,7 +3930,7 @@ function TakoGlass.Elements.CreateParagraph(section, options)
         Size = UDim2.new(1, 0, 0, 60),
         BackgroundTransparency = 1,
         ZIndex = 106,
-        Parent: section.Content
+        Parent = section.Content 
     })
     
     -- Title
@@ -4064,7 +4064,7 @@ function TakoGlass.Elements.CreateImage(section, options)
         Size = image.Size,
         BackgroundTransparency = 1,
         ZIndex = 106,
-        Parent: section.Content
+        Parent = section.Content 
     })
     
     -- Image label
@@ -4295,7 +4295,7 @@ function TakoGlass.Elements.CreateCodeBlock(section, options)
         BackgroundTransparency = 0,
         BorderSizePixel = 0,
         ZIndex = 106,
-        Parent: section.Content
+        Parent = section.Content 
     })
     
     Create("UICorner", {CornerRadius = UDim.new(0, ELEMENT_RADIUS), Parent: codeblock.Frame})
